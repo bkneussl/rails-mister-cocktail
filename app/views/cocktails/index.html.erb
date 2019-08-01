@@ -1,7 +1,13 @@
-<h1>Cocktails</h1>
+<h1 class="text-center">Cocktails</h1>
 
-<% @cocktails.each do |cocktail| %>
-<%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %>
-<% end %>
- <br>
-<%= link_to "New Cocktail", new_cocktail_path %>
+<div class="container text-center">
+  <div class="d-flex justify-content-center">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card p-3 m-3  w-150">
+      <%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %>
+    </div>
+  <% end %>
+  </div>
+   <br>
+  <%= link_to "New Cocktail", new_cocktail_path, class: "btn btn-primary"%>
+</div>
